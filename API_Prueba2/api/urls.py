@@ -3,5 +3,6 @@ from .views import AlumnosView
 
 
 urlpatterns=[
-    path('alumnos/', AlumnosView.as_view(), name='alumnos_list')
+    path('alumnos/', AlumnosView.as_view(), name='alumnos_list'),
+    path('alumnos/<correo>', AlumnosView.as_view(), name='alumnos_process')
 ]
