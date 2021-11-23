@@ -84,11 +84,11 @@ def loginUsuario(request, correo_alumno, password_alumno):
         usuario = Alumnos.objects.get(correo_alumno=correo_alumno, password_alumno=password_alumno)     
     except Alumnos.DoesNotExist:         
         datos={'message':"Alumno no encontrado..."}
-        return JsonResponse(datos)     
+        return JsonResponse(datos)
     if request.method=='GET':         
         serializer = AlumnosSerializers(usuario)  
         datos={'message': "Success"}       
         return JsonResponse(serializer.data)     
     else:          
         datos={'message':"Alumno no encontrado..."}
-    return JsonResponse(datos)
+        return JsonResponse(datos)
